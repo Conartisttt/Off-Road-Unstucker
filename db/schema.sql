@@ -1,2 +1,2 @@
-DROP DATABASE IF EXISTS offroad_db;
-CREATE DATABASE offroad_db;
+DROP DATABASE IF EXISTS unstuck_db;
+CREATE DATABASE unstuck_db;
