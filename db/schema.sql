@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS offroad_db;
+CREATE DATABASE offroad_db;
