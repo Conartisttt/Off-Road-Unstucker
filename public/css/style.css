@@ -18,8 +18,9 @@ body {
 .header {
   color: #CD7131;
   background-color: #453008;
-  padding: 30px;
+  padding: 10px;
   margin: 15px;
+  font-size: xx-large;
 }
 
 .header-text {
