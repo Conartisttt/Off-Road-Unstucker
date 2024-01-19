@@ -1,0 +1,11 @@
+<dependency>
+ <groupId>com.google.maps</groupId>
+ <artifactId>google-maps-services
+  <version>(latest version)</version>
+</dependency>
+
+GeoApiContext context = new GeoApiContext.Builder()
+    .apiKey("AIzaSyBUyAUAnzALQYN9a1zA_DjK3sZIyB_oSUU")
+    .build();
+
+    GeocodingResult[] results =  GeocodingApi.geocode(context, "1600 Amphitheatre Parkway Mountain View, CA 94043").await();
