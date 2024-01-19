@@ -4,41 +4,7 @@
   </div>
 </div>
 
-<div id="create-new" class="row mt-4">
-  <div class="col-md-6">
-    <h3>Stuck? Create a New Post:</h3>
 
-    <form class="form new-project-form">
-      <div class="form-group">
-        <label for="project-name">post title:</label>
-        <input class="form-input" type="text" id="post-name" name="project-name" />
-      </div>
-      <div class="form-group">
-        <label for="project-desc">description:</label>
-        <input class="form-input" id="post-desc" name="project-desc"/>
-      </div>
-      <label for="contact_method">Contact Method:</label>
-      <div class="form-group"></div>
-      <select class="form-input" name="contact_method" id="contact_method">
-        <option value="call">Call</option>
-        <option value="text">Text</option>
-        <option value="email">Email</option>
-      </select>
-  </div>
-
-  <div class="form-group">
-    <label for="vehicle_make">Vehicle Make:</label>
-    <input class="form-input" id="vehicle_make" name="vehicle_make"/>
-  </div>
-  <div class="form-group">
-    <label for="vehicle_model">Vehicle Model:</label>
-    <input class="form-input" id="vehicle_model" name="vehicle_model"/>
-  </div>
-  <div class="form-group">
-    <button type="submit" class="btn btn-primary">Create</button>
-  </div>
-  </form>
-</div>
 
 {{#if post}}
 <div class="col-md-6 project-list">
@@ -98,6 +64,45 @@
 
 </div>
 </div>
+
+{{else}}
+
+<div id="create-new" class="row mt-4">
+  <div class="col-md-6">
+    <h3>Stuck? Create a New Post:</h3>
+
+    <form class="form new-project-form">
+      <div class="form-group">
+        <label for="project-name">post title:</label>
+        <input class="form-input" type="text" id="post-name" name="project-name" />
+      </div>
+      <div class="form-group">
+        <label for="project-desc">description:</label>
+        <input class="form-input" id="post-desc" name="project-desc"/>
+      </div>
+      <label for="contact_method">Contact Method:</label>
+      <div class="form-group"></div>
+      <select class="form-input" name="contact_method" id="contact_method">
+        <option value="call">Call</option>
+        <option value="text">Text</option>
+        <option value="email">Email</option>
+      </select>
+  </div>
+
+  <div class="form-group">
+    <label for="vehicle_make">Vehicle Make:</label>
+    <input class="form-input" id="vehicle_make" name="vehicle_make"/>
+  </div>
+  <div class="form-group">
+    <label for="vehicle_model">Vehicle Model:</label>
+    <input class="form-input" id="vehicle_model" name="vehicle_model"/>
+  </div>
+  <div class="form-group">
+    <button type="submit" class="btn btn-primary">Create</button>
+  </div>
+  </form>
+</div>
+
 {{/if}}
 </div>
 
