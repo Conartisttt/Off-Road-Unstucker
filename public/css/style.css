@@ -1,24 +1,58 @@
 header, .project:not(:last-child) {
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #CD7131;
 }
 
-.no-button {
-  background: none;
+body {
+  background-color: #798C6D;
+}
+
+
+.header-container {
+  padding: 10px;
+  background-color: #453008;
+  text-emphasis-color: #CD7131;
+  color: #fff;
   border: none;
-  padding: 0;
+}
+
+.header {
+  color: #CD7131;
+  background-color: #453008;
+  padding: 10px;
+  margin: 15px;
+  font-size: xx-large;
+}
+
+.header-text {
+  color: #CD7131;
+}
+
+.login-button {
+  padding: 10px;
+  background-color: #CD7131; /* Adjust the button background color */
+  color: #453008; /* Adjust the button text color */
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
-  color: #1b89bc;
-  text-decoration: none;
-  font-size: 100%;
+  position: relative;
 }
 
-.no-button:hover {
-  color: #065b83;
-  text-decoration: underline;
+.login-button:hover {
+  background-color: #663A22; /* Adjust the hover background color */
 }
 
-.dollar-amount {
-  color: #056605;
-  font-weight: bold;
-  margin-left: -5px;
+button.btn.btn-primary {
+  padding: 10px;
+  margin: 5px;
+  background-color: #453008;
+  color: #CD7131;
+  border: black;
+}
+
+button.btn.btn-primary:hover {
+  background-color: #663A22;
+}
+
+.form-group {
+  color: #453008;
 }
