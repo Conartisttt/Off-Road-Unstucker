@@ -22,6 +22,8 @@ const newFormHandler = async (event) => {
     } else {
       alert('Failed to create post');
     }
+  } else {
+    alert('Something is missing... failed to create post');
   }
 };
 

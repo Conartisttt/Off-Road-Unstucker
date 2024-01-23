@@ -246,6 +246,10 @@ button:not(:disabled) {
   border-radius: 7px;
 }
 
+.hide {
+  display: none;
+}
+
 /* Add a media query to adjust styles for smaller screens */
 @media (max-width: 767px) {
   .display-boxes {
