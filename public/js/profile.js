@@ -9,7 +9,7 @@ const newFormHandler = async (event) => {
 
 
   if (name && description && vehicle_make && vehicle_model && contact_method) {
-    const response = await fetch(`/api/posts`, {
+    const response = await fetch('/api/posts', {
       method: 'POST',
       body: JSON.stringify({ name, description, vehicle_make, vehicle_model, contact_method }),
       headers: {
@@ -43,14 +43,14 @@ const delButtonHandler = async (event) => {
   }
 };
 
-const updateButtonHandler = async (event) => {
+const updateButtonHandler = async () => {
   const currrentPost = document.getElementById('post');
   currrentPost.classList.add('hide');
   const updatePost = document.getElementById('update-post');
   updatePost.classList.remove('hide');
   const createPost = document.getElementById('create-new');
   createPost.classList.add('hide');
-}
+};
 
 const updateDatabaseHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
@@ -69,17 +69,17 @@ const updateDatabaseHandler = async (event) => {
           'Content-Type': 'application/json',
         },
       });
-  
+
       if (response.ok) {
         document.location.replace('/profile');
       } else {
         alert('Failed to update post');
       }
     } else {
-      alert('Post Not Updated! Something is missing..')
+      alert('Post Not Updated! Something is missing..');
+    }
   }
-  } 
-}
+};
 
 //update from delete to put request
 // const updateButtonHandler = async (event) => {
@@ -100,8 +100,8 @@ document
   .getElementById('delete')
   .addEventListener('click', delButtonHandler);
 
-  document.getElementById('update')
+document.getElementById('update')
   .addEventListener('click', updateButtonHandler);
 
-  document.getElementById('update-btn')
+document.getElementById('update-btn')
   .addEventListener('click', updateDatabaseHandler);
