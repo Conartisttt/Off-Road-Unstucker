@@ -46,6 +46,20 @@
           onclick="location.href='/'"
         >Fill A Request</button>
       </h2>
+      <div id ="map"> </div>
+      <script>
+      function initMap() {
+        var options = {
+          zoom: 15,
+          center: { lat: 33.933241, lng: -84.340288 },
+        };
+        var map = new google.maps.Map(document.getElementById('map'), options);
+        var marker = new google.maps.Marker({
+          position: { lat: 33.933241, lng: -84.340288 },
+          map: map,
+        });
+      }
+    </script>
     </div>
     <main class='container container-fluid mt-5'>
       <!-- Render the sub layout -->
@@ -61,6 +75,7 @@
     {{#if logged_in}}
       <script src='/js/logout.js'></script>
     {{/if}}
+    <script defer src="<https://maps.googleapis.com/maps/api/js?key=AIzaSyBUyAUAnzALQYN9a1zA_DjK3sZIyB_oSUU&callback=initMap>"></script>
   </body>
 
 </html>
