@@ -1,36 +1,48 @@
+CSS FILE
 header, .project:not(:last-child) {
   border-bottom: 1px solid #CD7131;
 }
 
+:root {
+  --darkbrown: #453008;
+  --mediumbrown: #663A22;
+  --orange: #AD472F;
+  --yellow: #CD7131;
+  --green: #798C6D;
+  --white: #fff;
+  --black: #000000;
+}
+
 body {
-  background-color: #798C6D;
+  background-color: var(--green);
 }
 
 
 .header-container {
   padding: 10px;
-  background-color: #453008;
-  text-emphasis-color: #CD7131;
-  color: #fff;
+  background-color: var(--darkbrown);
+  text-emphasis-color: var(--yellow);
+  color: var(--white);
   border: none;
 }
 
 .header {
-  color: #CD7131;
-  background-color: #453008;
+  color: var(--yellow);
+  background-color: var(--darkbrown);
   padding: 10px;
   margin: 15px;
   font-size: xx-large;
+  text-align: center;
 }
 
 .header-text {
-  color: #CD7131;
+  color: var(--yellow);
 }
 
 .login-button {
   padding: 10px;
-  background-color: #CD7131; /* Adjust the button background color */
-  color: #453008; /* Adjust the button text color */
+  background-color: var(--yellow); /* Adjust the button background color */
+  color: var(--darkbrown); /* Adjust the button text color */
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -38,25 +50,215 @@ body {
 }
 
 .login-button:hover {
-  background-color: #663A22; /* Adjust the hover background color */
+  background-color: var(--mediumbrown); 
+}
+
+.logout-button {
+  color: var(--darkbrown);
+  background-color: var(--orange);
+  border: none;
+  border-radius: 7px;
+  width: 27%;
+  padding: 5px;
+  margin: 10px;
+}
+
+.logout-button:hover {
+  background-color: var(--mediumbrown);
 }
 
 button.btn.btn-primary {
   padding: 10px;
   margin: 5px;
-  background-color: #453008;
-  color: #CD7131;
-  border: black;
+  background-color: var(--darkbrown);
+  color: var(--yellow);
+  border: var(--black);
 }
 
 button.btn.btn-primary:hover {
-  background-color: #663A22;
+  background-color: var(--mediumbrown);
+}
+
+.profile-btn {
+  background-color: var(--orange);
+  border: none;
+  border-radius: 7px;
+  width: 25%;
+  padding: 5px;
+  margin: 10px;
+  text-align: center;
+  text-decoration: none;
+  color: var(--darkbrown) !important; 
+  display: inline-block;
+}
+
+.profile-btn:hover {
+  background-color: var(--mediumbrown);
+}
+
+.signup {
+  color: var(--darkbrown);
+  background-color: var(--orange);
+  border-radius: 7px;
+  width: 25%;
+  padding: 5px;
+  margin: 10px;
+}
+
+.login {
+  color: var(--darkbrown);
+  background-color: var(--orange);
+  border-radius: 7px;
+  width: 27%;
+  padding: 5px;
+  margin: 10px;
+}
+
+.display-boxes {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.form-groups {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--darkbrown);
+  border-radius: 3px;
+  color: var(--yellow);
+}
+
+.created-post {
+  color: var(--darkbrown);
+}
+
+label {
+  margin-bottom: 5px;
+}
+
+.project {
+  background-color: var(--darkbrown);
+  color: var(--yellow);
+  border-radius: 7px;
+  border: var(--black);
+}
+
+.post-btn {
+  background-color: var(--orange);
+  border-radius: 5px;
+  border: var(--black);
+}
+
+.post-desc {
+  background-color: var(--mediumbrown);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+}
+
+.posted {
+  background-color: var(--orange);
+  border-radius: 7px;
+  padding: 20px;
+  text-align: center;
+}
+
+button:not(:disabled) {
+  background-color: var(--yellow);
+  color: var(--darkbrown);
+  border-radius: 10px;
+  border: var(--black);
+  text-align: start;
+  margin: 7px;
+}
+
+.welcome-sign {
+  background-color: var(--darkbrown);
+  border-radius: 10px;
+  color: var(--yellow);
+  padding: 7px;
+  margin: 25px;
+  text-align: center;
+}
+
+.current-post {
+  background-color: var(--darkbrown);
+  color: var(--yellow);
+  border-radius: 10px;
+  padding: 7px;
+  margin: 15px;
+}
+
+#update {
+  background-color: var(--yellow);
+}
+
+#delete {
+  background-color: var(--yellow);
+}
+
+.delete-btn {
+  padding: 5px;
+}
+
+.update-btn {
+  padding: 5px;
 }
 
 .form-group {
-  color: #453008;
+  background-color: var(--darkbrown);
+  color: var(--yellow);
+  border-radius: 3px;
+  padding: 5px;
+}
+
+.form-grouped {
+  background-color: var(--darkbrown);
+  color: var(--yellow);
+  border-radius: 5px;
+  padding: 5px;
+  margin: 10px;
+}
+
+.update {
+  background-color: var(--yellow);
+  color: var(--darkbrown);
+  border-radius: 5px;
+  padding: 8px;
+  margin: 10px;
+}
+
+.title {
+  background-color: var(--orange);
+  color: var(--darkbrown);
+  border-radius: 7px;
+}
+
+.description {
+  background-color: var(--orange);
+  color: var(--darkbrown);
+  border-radius: 7px;
+}
+
+.other-info {
+  background-color: var(--darkbrown);
+  color: var(--yellow);
+  border-radius: 7px;
 }
 
 .hide {
   display: none;
+}
+
+/* Add a media query to adjust styles for smaller screens */
+@media (max-width: 767px) {
+  .display-boxes {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    align-items: center; /* Center items on the cross-axis */
+  }
+
+  .login, .signup {
+    width: 100%; /* Make each box take up the full width on smaller screens */
+  }
 }
