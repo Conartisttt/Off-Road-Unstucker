@@ -17,14 +17,14 @@
     <header class='text-center'>
       <div class='row'>
         <div class='col'></div>
-        <div class='col'><button class='header' onclick="location.href='/'">Off
+        <div class='col'><button class='header hover-effect' onclick="location.href='/'">Off
             The Beaten Path!</button></div>
                 <!-- Conditionally render login or logout links -->
         <div class='col text-end'>{{#if logged_in}}
-            <div><button class='profile-btn' onclick="location.href='/profile'">profile</div></button>
+            <div><button class='profile-btn hover-effect' onclick="location.href='/profile'">profile</div></button>
             <button class='logout-button' id='logout'>logout</button>
           {{else}}
-            <button class='login-button'onclick="location.href='/login'">login</button>
+            <button class='login-button hover-effect'onclick="location.href='/login'">login</button>
           {{/if}}</div>
       </div>
       <h1>
