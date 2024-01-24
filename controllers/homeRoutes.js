@@ -2,9 +2,10 @@ const router = require('express').Router();
 const { Post, User } = require('../models');
 const withAuth = require('../utils/auth');
 
+// Route for homepage
 router.get('/', async (req, res) => {
   try {
-    // Get all projects and JOIN with user data
+    // Get all posts and JOIN with user data
     const postData = await Post.findAll({
       include: [
         {
@@ -27,8 +28,10 @@ router.get('/', async (req, res) => {
   }
 });
 
+// Route for individual posts
 router.get('/post/:id', async (req, res) => {
   try {
+    // Get a post based on its ID and JOIN with user data
     const postData = await Post.findByPk(req.params.id, {
       include: [
         {
@@ -38,8 +41,10 @@ router.get('/post/:id', async (req, res) => {
       ],
     });
 
+    // Serialize data so the template can read it
     const post = postData.get({ plain: true });
 
+    // Pass serialized data and session flag into template
     res.render('post', {
       ...post,
       logged_in: req.session.logged_in
@@ -58,8 +63,10 @@ router.get('/profile', withAuth, async (req, res) => {
       include: [{ model: Post }],
     });
 
+    // Serialize data so the template can read it
     const user = userData.get({ plain: true });
 
+    // Pass serialized data and session flag into template
     res.render('profile', {
       ...user,
       logged_in: true
@@ -70,7 +77,7 @@ router.get('/profile', withAuth, async (req, res) => {
 });
 
 router.get('/login', (req, res) => {
-  // If the user is already logged in, redirect the request to another route
+  // If the user is already logged in, redirect the request to profile route
   if (req.session.logged_in) {
     res.redirect('/profile');
     return;

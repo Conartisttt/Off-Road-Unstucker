@@ -57,6 +57,7 @@ button.btn.btn-primary:hover {
   color: #453008;
 }
 
+/* Class used to hide and unhide elements as needed */
 .hide {
-  display: none;
+  display: none; 
 }

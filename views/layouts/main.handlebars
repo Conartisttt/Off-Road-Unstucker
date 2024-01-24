@@ -4,7 +4,6 @@
     <meta charset='UTF-8' />
     <meta name='viewport' content='width=device-width, initial-scale=1.0' />
     <title>Off The Beaten Path!</title>
-    {{! <link rel="stylesheet" href="/css/jass.css"> }}
     <link
       rel='stylesheet'
       href='https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css'
@@ -20,6 +19,7 @@
         <div class='col'></div>
         <div class='col'><button class='header' onclick="location.href='/'">Off
             The Beaten Path!</button></div>
+                <!-- Conditionally render login or logout links -->
         <div class='col text-end'>{{#if logged_in}}
             <a href='/profile'>profile</a>
             <button class='logout-button' id='logout'>logout</button>
@@ -34,7 +34,6 @@
   </div>
 
   <body>
-    <!-- Conditionally render login or logout links -->
     <div class='text-center mt-5'>
       <h2>
         <button
