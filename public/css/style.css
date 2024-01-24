@@ -247,6 +247,7 @@ button:not(:disabled) {
   border-radius: 7px;
 }
 
+/* Class used to hide and unhide elements as needed */
 .hide {
   display: none;
 }

@@ -1,6 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
+// Create a new Sequelize model
 class Post extends Model {}
 
 Post.init(
@@ -44,6 +45,7 @@ Post.init(
     }
   },
   {
+    // Link to database connection
     sequelize,
     timestamps: false,
     freezeTableName: true,

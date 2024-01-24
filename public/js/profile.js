@@ -1,6 +1,7 @@
 const newFormHandler = async (event) => {
   event.preventDefault();
 
+  //Collect values from post form
   const name = document.getElementById('post-name').value.trim();
   const description = document.getElementById('post-desc').value.trim();
   const vehicle_make = document.getElementById('vehicle_make').value.trim();
@@ -9,6 +10,7 @@ const newFormHandler = async (event) => {
 
 
   if (name && description && vehicle_make && vehicle_model && contact_method) {
+    //Send POST request to API endpoint
     const response = await fetch('/api/posts', {
       method: 'POST',
       body: JSON.stringify({ name, description, vehicle_make, vehicle_model, contact_method }),
@@ -18,6 +20,7 @@ const newFormHandler = async (event) => {
     });
 
     if (response.ok) {
+      // If successful, redirect the browser to the profile page
       document.location.replace('/profile');
     } else {
       alert('Failed to create post');
@@ -29,13 +32,16 @@ const newFormHandler = async (event) => {
 
 const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
+    //Collect the post ID from the data- in HTML
     const id = event.target.getAttribute('data-id');
 
+    //Send DELETE request to API endpoint
     const response = await fetch(`/api/posts/${id}`, {
       method: 'DELETE',
     });
 
     if (response.ok) {
+      // If successful, redirect the browser to the profile page
       document.location.replace('/profile');
     } else {
       alert('Failed to delete post');
@@ -43,6 +49,7 @@ const delButtonHandler = async (event) => {
   }
 };
 
+// This event listener hides the post and displays update form on click
 const updateButtonHandler = async () => {
   const currrentPost = document.getElementById('post');
   currrentPost.classList.add('hide');
@@ -54,6 +61,7 @@ const updateButtonHandler = async () => {
 
 const updateDatabaseHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
+    // Collect data from update form
     const id = event.target.getAttribute('data-id');
     const name = document.getElementById('updated-post-name').value.trim();
     const description = document.getElementById('updated-post-desc').value.trim();
@@ -62,6 +70,7 @@ const updateDatabaseHandler = async (event) => {
     const contact_method = document.getElementById('updated-contact_method').value;
 
     if (name && description && vehicle_make && vehicle_model && contact_method && id) {
+      // Send PUT request to API endpoint
       const response = await fetch(`/api/posts/${id}`, {
         method: 'PUT',
         body: JSON.stringify({ name, description, vehicle_make, vehicle_model, contact_method }),
@@ -71,6 +80,7 @@ const updateDatabaseHandler = async (event) => {
       });
 
       if (response.ok) {
+        // If successful, redirect the browser to the profile page
         document.location.replace('/profile');
       } else {
         alert('Failed to update post');
@@ -80,17 +90,6 @@ const updateDatabaseHandler = async (event) => {
     }
   }
 };
-
-//update from delete to put request
-// const updateButtonHandler = async (event) => {
-//   if (event.target.hasAttribute('data-id')) {
-//     const id = event.target.getAttribute('data-id');
-
-//     const response = await fetch(`/api/posts/${id}`, {
-//       method: 'DELETE',
-//     });
-// }
-// };
 
 document
   .querySelector('.new-project-form')
