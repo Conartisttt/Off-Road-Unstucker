@@ -2,6 +2,7 @@ const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
+// Create a new Sequelize model
 class User extends Model {
   checkPassword(loginPw) {
     return bcrypt.compareSync(loginPw, this.password);
@@ -38,6 +39,9 @@ User.init(
     phone: {
       type: DataTypes.STRING,
       allowNull: false,
+      validate: {
+        is: ['[0-9]{3}-[0-9]{3}-[0-9]{4}']
+      }
     }
   },
   {
@@ -51,6 +55,7 @@ User.init(
         return updatedUserData;
       },
     },
+    // Link to database connection
     sequelize,
     timestamps: false,
     freezeTableName: true,
