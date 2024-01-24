@@ -37,7 +37,7 @@ const sess = {
   },
   resave: false,
   saveUninitialized: true,
-    // Sets up session store
+  // Sets up session store
   store: new SequelizeStore({
     db: sequelize
   })

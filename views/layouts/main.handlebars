@@ -21,7 +21,7 @@
             The Beaten Path!</button></div>
                 <!-- Conditionally render login or logout links -->
         <div class='col text-end'>{{#if logged_in}}
-            <a href='/profile'>profile</a>
+            <div><button class='profile-btn' onclick="location.href='/profile'">profile</div></button>
             <button class='logout-button' id='logout'>logout</button>
           {{else}}
             <button class='login-button'onclick="location.href='/login'">login</button>

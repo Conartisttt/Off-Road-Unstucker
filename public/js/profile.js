@@ -11,7 +11,7 @@ const newFormHandler = async (event) => {
 
   if (name && description && vehicle_make && vehicle_model && contact_method) {
     //Send POST request to API endpoint
-    const response = await fetch(`/api/posts`, {
+    const response = await fetch('/api/posts', {
       method: 'POST',
       body: JSON.stringify({ name, description, vehicle_make, vehicle_model, contact_method }),
       headers: {
@@ -50,14 +50,14 @@ const delButtonHandler = async (event) => {
 };
 
 // This event listener hides the post and displays update form on click
-const updateButtonHandler = async (event) => {
+const updateButtonHandler = async () => {
   const currrentPost = document.getElementById('post');
   currrentPost.classList.add('hide');
   const updatePost = document.getElementById('update-post');
   updatePost.classList.remove('hide');
   const createPost = document.getElementById('create-new');
   createPost.classList.add('hide');
-}
+};
 
 const updateDatabaseHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
@@ -78,7 +78,7 @@ const updateDatabaseHandler = async (event) => {
           'Content-Type': 'application/json',
         },
       });
-  
+
       if (response.ok) {
         // If successful, redirect the browser to the profile page
         document.location.replace('/profile');
@@ -86,10 +86,10 @@ const updateDatabaseHandler = async (event) => {
         alert('Failed to update post');
       }
     } else {
-      alert('Post Not Updated! Something is missing..')
+      alert('Post Not Updated! Something is missing..');
+    }
   }
-  } 
-}
+};
 
 document
   .querySelector('.new-project-form')
@@ -99,8 +99,8 @@ document
   .getElementById('delete')
   .addEventListener('click', delButtonHandler);
 
-  document.getElementById('update')
+document.getElementById('update')
   .addEventListener('click', updateButtonHandler);
 
-  document.getElementById('update-btn')
+document.getElementById('update-btn')
   .addEventListener('click', updateDatabaseHandler);

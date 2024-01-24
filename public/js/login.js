@@ -46,7 +46,7 @@ const signupFormHandler = async (event) => {
       alert(response.statusText);
     }
   } else {
-    alert("Something is missing... Please try again");
+    alert('Something is missing... Please try again');
   }
 };
 
