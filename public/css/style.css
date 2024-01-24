@@ -50,7 +50,9 @@ body {
 }
 
 .login-button:hover {
-  background-color: var(--mediumbrown); 
+  box-shadow: inset 0px 0px 5px rgb(157, 255, 0), 0 0 15px rgb(255, 85, 0);
+  transform: scale(1.03);
+  transition: all 0.5s ease-in-out;
 }
 
 .logout-button {
@@ -64,7 +66,9 @@ body {
 }
 
 .logout-button:hover {
-  background-color: var(--mediumbrown);
+  box-shadow: inset 0px 0px 5px rgb(157, 255, 0), 0 0 15px rgb(255, 85, 0);
+  transform: scale(1.03);
+  transition: all 0.5s ease-in-out;
 }
 
 button.btn.btn-primary {
@@ -76,7 +80,9 @@ button.btn.btn-primary {
 }
 
 button.btn.btn-primary:hover {
-  background-color: var(--mediumbrown);
+  box-shadow: inset 0px 0px 5px rgb(157, 255, 0), 0 0 15px rgb(255, 85, 0);
+  transform: scale(1.03);
+  transition: all 0.5s ease-in-out;
 }
 
 .profile-btn {
@@ -93,7 +99,9 @@ button.btn.btn-primary:hover {
 }
 
 .profile-btn:hover {
-  background-color: var(--mediumbrown);
+  box-shadow: inset 0px 0px 5px rgb(157, 255, 0), 0 0 15px rgb(255, 85, 0);
+  transform: scale(1.03);
+  transition: all 0.5s ease-in-out;
 }
 
 .signup {
@@ -250,6 +258,12 @@ button:not(:disabled) {
 /* Class used to hide and unhide elements as needed */
 .hide {
   display: none;
+}
+
+.hover-effect:hover {
+  box-shadow: inset 0px 0px 5px rgb(157, 255, 0), 0 0 15px rgb(255, 85, 0);
+  transform: scale(1.03);
+  transition: all 0.5s ease-in-out;
 }
 
 /* Add a media query to adjust styles for smaller screens */
