@@ -39,6 +39,9 @@ User.init(
     phone: {
       type: DataTypes.STRING,
       allowNull: false,
+      validate: {
+        is: ['[0-9]{3}-[0-9]{3}-[0-9]{4}']
+      }
     }
   },
   {
