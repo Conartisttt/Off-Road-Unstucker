@@ -1,0 +1,11 @@
+//Download extention REST Client in VS Code
+
+//Start server using npx nodemon server.js
+
+//Uncomment out one line, and press Send Request button to test GET request for HTML pages without using Insomnia
+
+# GET http://localhost:3001
+
+# GET http://localhost:3001/profile
+
+# GET http://localhost:3001/login
