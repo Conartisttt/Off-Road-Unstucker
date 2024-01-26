@@ -13,7 +13,7 @@
   </div>
   <div id="post">
     <div class="profile-post row align-items-start">
-      <div class=" posted">
+      <div class=" posted col-sm-6 col-md-5">
         <h4>
           <div class="post-id"><button type="posted-btn"
               onclick="location.href='/post/{{post.id}}'">{{post.name}}</button></div>
@@ -32,43 +32,43 @@
 
 <div id="update-post" class="hide">
   <div class="row mt-4 row align-items-start">
-    <div class="row">
-      <div class="update col-6 col-sm-3">
+      <div class="col-6 col-sm-3 update-header">
         <h3>
           Update Current Post:
         </h3>
       </div>
+      <div class="row">
       <form class="form new-project-form">
         <div class="text-center">
-          <div class="form-grouped col-sm-6 col-md-4">
+          <div class="form-grouped col-sm-6 col-md-9">
             <label for="updated-project-name">post title:</label>
-            <input class="form-input" type="text" id="updated-post-name" name="updated-project-name"
+            <input class="form-control" type="text" id="updated-post-name" name="updated-project-name"
               value="{{post.name}}" />
           </div>
-          <div class="form-grouped col-sm-6 col-md-4">
+          <div class="form-grouped col-sm-6 col-md-9">
             <label for="updated-project-desc">description:</label>
-            <input class="form-input" id="updated-post-desc" name="updated-project-desc" value="{{post.description}}" />
+            <input class="form-control" id="updated-post-desc" name="updated-project-desc" value="{{post.description}}" />
           </div>
-          <div class="form-grouped col-sm-6 col-md-4">
+          <div class="form-grouped col-sm-6 col-md-9">
             <label for="updated-contact_method">Contact Method:</label>
-            <select class="form-input" name="updated-contact_method" id="updated-contact_method">
+            <select class="form-control" name="updated-contact_method" id="updated-contact_method">
               <option value="" disabled selected>Select your option</option>
               <option value="call">Call</option>
               <option value="text">Text</option>
               <option value="email">Email</option>
             </select>
           </div>
-          <div class="form-grouped col-sm-6 col-md-4">
+          <div class="form-grouped col-sm-6 col-md-9">
             <label for="updated-vehicle_make">Vehicle Make:</label>
-            <input class="form-input" id="updated-vehicle_make" name="updated-vehicle_make"
+            <input class="form-control" id="updated-vehicle_make" name="updated-vehicle_make"
               value="{{post.vehicle_make}}" />
           </div>
-          <div class="form-grouped col-sm-6 col-md-4">
+          <div class="form-grouped col-sm-6 col-md-9">
             <label for="updated-vehicle_model">Vehicle Model:</label>
-            <input class="form-input" id="updated-vehicle_model" name="updated-vehicle_model"
+            <input class="form-control" id="updated-vehicle_model" name="updated-vehicle_model"
               value="{{post.vehicle_model}}" />
           </div>
-          <div class="form-grouped col-sm-6 col-md-4">
+          <div class="form-grouped col-sm-6 col-md-9">
             <button id="update-btn" type="submit" class="btn btn-primary" data-id="{{post.id}}">Update</button>
           </div>
       </form>
