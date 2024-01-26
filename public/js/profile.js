@@ -55,8 +55,8 @@ const updateButtonHandler = async () => {
   currrentPost.classList.add('hide');
   const updatePost = document.getElementById('update-post');
   updatePost.classList.remove('hide');
-  const createPost = document.getElementById('create-new');
-  createPost.classList.add('hide');
+  // const createPost = document.getElementById('create-new');
+  // createPost.classList.add('hide');
 };
 
 const updateDatabaseHandler = async (event) => {
@@ -92,8 +92,8 @@ const updateDatabaseHandler = async (event) => {
 };
 
 document
-  .querySelector('.new-project-form')
-  .addEventListener('submit', newFormHandler);
+  .getElementById('create-post')
+  .addEventListener('click', newFormHandler);
 
 document
   .getElementById('delete')
