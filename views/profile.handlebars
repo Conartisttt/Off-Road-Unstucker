@@ -2,21 +2,22 @@
   <div class="col"></div>
   <div class="col welcome-sign d-flex justify-content-center">
     <h2>Welcome, {{name}}!</h2>
-</div>
-<div class="col"></div>
+  </div>
+  <div class="col"></div>
 </div>
 
 {{#if post}}
 <div class="col-md-6 project-list">
   <div class="current-post d-flex justify-content-center">
-  <h3>Current Post:</h3>
+    <h3>Current Post:</h3>
   </div>
   <div id="post">
     <div class="profile-post row align-items-start">
       <div class=" posted">
         <h4>
-          <div class="post-id"><button type="posted-btn" onclick="location.href='/post/{{post.id}}'">{{post.name}}</button></div>
-          </h4>
+          <div class="post-id"><button type="posted-btn"
+              onclick="location.href='/post/{{post.id}}'">{{post.name}}</button></div>
+        </h4>
       </div>
       <div class="col"></div>
       <div class="col delete-btn">
@@ -28,47 +29,88 @@
     </div>
   </div>
 </div>
-  <div id="update-post" class="hide">
-    <div class="row mt-4 row align-items-start">
-      <div class="row">
-        <div class="update col-6 col-sm-3"><h3>
+
+<div id="update-post" class="hide">
+  <div class="row mt-4 row align-items-start">
+    <div class="row">
+      <div class="update col-6 col-sm-3">
+        <h3>
           Update Current Post:
-          </h3></div>
-        <form class="form new-project-form">
-          <div class="text-center">
+        </h3>
+      </div>
+      <form class="form new-project-form">
+        <div class="text-center">
           <div class="form-grouped col-sm-6 col-md-4">
             <label for="updated-project-name">post title:</label>
-            <input class="form-input" type="text" id="updated-post-name" name="updated-project-name" value="{{post.name}}" />
+            <input class="form-input" type="text" id="updated-post-name" name="updated-project-name"
+              value="{{post.name}}" />
           </div>
           <div class="form-grouped col-sm-6 col-md-4">
             <label for="updated-project-desc">description:</label>
-            <input class="form-input" id="updated-post-desc" name="updated-project-desc" value="{{post.description}}"/>
+            <input class="form-input" id="updated-post-desc" name="updated-project-desc" value="{{post.description}}" />
           </div>
           <div class="form-grouped col-sm-6 col-md-4">
-          <label for="updated-contact_method">Contact Method:</label>
-          <select class="form-input" name="updated-contact_method" id="updated-contact_method">
-            <option value="" disabled selected>Select your option</option>
-            <option value="call">Call</option>
-            <option value="text">Text</option>
-            <option value="email">Email</option>
-          </select>
+            <label for="updated-contact_method">Contact Method:</label>
+            <select class="form-input" name="updated-contact_method" id="updated-contact_method">
+              <option value="" disabled selected>Select your option</option>
+              <option value="call">Call</option>
+              <option value="text">Text</option>
+              <option value="email">Email</option>
+            </select>
           </div>
-      <div class="form-grouped col-sm-6 col-md-4">
-        <label for="updated-vehicle_make">Vehicle Make:</label>
-        <input class="form-input" id="updated-vehicle_make" name="updated-vehicle_make" value="{{post.vehicle_make}}"/>
-      </div>
-      <div class="form-grouped col-sm-6 col-md-4">
-        <label for="updated-vehicle_model">Vehicle Model:</label>
-        <input class="form-input" id="updated-vehicle_model" name="updated-vehicle_model" value="{{post.vehicle_model}}"/>
-      </div>
-      <div class="form-grouped col-sm-6 col-md-4">
-        <button id="update-btn" type="submit" class="btn btn-primary" data-id="{{post.id}}">Update</button>
-      </div>
+          <div class="form-grouped col-sm-6 col-md-4">
+            <label for="updated-vehicle_make">Vehicle Make:</label>
+            <input class="form-input" id="updated-vehicle_make" name="updated-vehicle_make"
+              value="{{post.vehicle_make}}" />
+          </div>
+          <div class="form-grouped col-sm-6 col-md-4">
+            <label for="updated-vehicle_model">Vehicle Model:</label>
+            <input class="form-input" id="updated-vehicle_model" name="updated-vehicle_model"
+              value="{{post.vehicle_model}}" />
+          </div>
+          <div class="form-grouped col-sm-6 col-md-4">
+            <button id="update-btn" type="submit" class="btn btn-primary" data-id="{{post.id}}">Update</button>
+          </div>
       </form>
     </div>
   </div>
 </div>
-</div>
+
+<div id="create-new" class="hide row align-items-start">
+  <div class="container created-post text-center">
+    <h3>Stuck? Create a New Post:</h3>
+    <form class="form new-project-form">
+      <div class="row">
+        <div class="form-group col-sm-6 col-md-4">
+          <label for="project-name">Post Title:</label>
+          <input class="form-input" type="text" id="post-name" name="project-name" />
+        </div>
+        <div class="form-group col-sm-6 col-md-4">
+          <label for="project-desc">Description:</label>
+          <input class="form-input" id="post-desc" name="project-desc" />
+        </div>
+        <div class="form-group col-sm-6 col-md-3">
+          <label for="contact_method">Contact Method:</label>
+          <select class="form-input" name="contact_method" id="contact_method">
+            <option value="call">Call</option>
+            <option value="text">Text</option>
+            <option value="email">Email</option>
+          </select>
+        </div>
+        <div class="form-group col-sm-6 col-md-4">
+          <label for="vehicle_make">Vehicle Make:</label>
+          <input class="form-input" id="vehicle_make" name="vehicle_make" />
+        </div>
+        <div class="form-group col-sm-6 col-md-4">
+          <label for="vehicle_model">Vehicle Model:</label>
+          <input class="form-input" id="vehicle_model" name="vehicle_model" />
+        </div>
+        <div class="form-group col-sm-6 col-md-3">
+          <button id="create-post" type="submit" class="btn btn-primary">Create</button>
+        </div>
+      </div>
+    </form>
+  </div>
 </div>
 
 {{else}}
@@ -84,7 +126,7 @@
         </div>
         <div class="form-group col-sm-6 col-md-4">
           <label for="project-desc">Description:</label>
-          <input class="form-input" id="post-desc" name="project-desc"/>
+          <input class="form-input" id="post-desc" name="project-desc" />
         </div>
         <div class="form-group col-sm-6 col-md-3">
           <label for="contact_method">Contact Method:</label>
@@ -96,17 +138,86 @@
         </div>
         <div class="form-group col-sm-6 col-md-4">
           <label for="vehicle_make">Vehicle Make:</label>
-          <input class="form-input" id="vehicle_make" name="vehicle_make"/>
+          <input class="form-input" id="vehicle_make" name="vehicle_make" />
         </div>
         <div class="form-group col-sm-6 col-md-4">
           <label for="vehicle_model">Vehicle Model:</label>
-          <input class="form-input" id="vehicle_model" name="vehicle_model"/>
+          <input class="form-input" id="vehicle_model" name="vehicle_model" />
         </div>
         <div class="form-group col-sm-6 col-md-3">
-          <button type="submit" class="btn btn-primary">Create</button>
+          <button id="create-post" type="submit" class="btn btn-primary">Create</button>
         </div>
       </div>
     </form>
+  </div>
+</div>
+
+<div class="col-md-6 project-list hide">
+  <div class="current-post d-flex justify-content-center">
+    <h3>Current Post:</h3>
+  </div>
+  <div id="post">
+    <div class="profile-post row align-items-start">
+      <div class=" posted">
+        <h4>
+          <div class="post-id"><button type="posted-btn"
+              onclick="location.href='/post/{{post.id}}'">{{post.name}}</button></div>
+        </h4>
+      </div>
+      <div class="col"></div>
+      <div class="col delete-btn">
+        <button id="delete" class="btn btn-danger" data-id="{{post.id}}">DELETE</button>
+      </div>
+      <div class="col update-btn">
+        <button id='update' class="btn btn-danger">UPDATE</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="update-post" class="hide">
+  <div class="row mt-4 row align-items-start">
+    <div class="row">
+      <div class="update col-6 col-sm-3">
+        <h3>
+          Update Current Post:
+        </h3>
+      </div>
+      <form class="form new-project-form">
+        <div class="text-center">
+          <div class="form-grouped col-sm-6 col-md-4">
+            <label for="updated-project-name">post title:</label>
+            <input class="form-input" type="text" id="updated-post-name" name="updated-project-name"
+              value="{{post.name}}" />
+          </div>
+          <div class="form-grouped col-sm-6 col-md-4">
+            <label for="updated-project-desc">description:</label>
+            <input class="form-input" id="updated-post-desc" name="updated-project-desc" value="{{post.description}}" />
+          </div>
+          <div class="form-grouped col-sm-6 col-md-4">
+            <label for="updated-contact_method">Contact Method:</label>
+            <select class="form-input" name="updated-contact_method" id="updated-contact_method">
+              <option value="" disabled selected>Select your option</option>
+              <option value="call">Call</option>
+              <option value="text">Text</option>
+              <option value="email">Email</option>
+            </select>
+          </div>
+          <div class="form-grouped col-sm-6 col-md-4">
+            <label for="updated-vehicle_make">Vehicle Make:</label>
+            <input class="form-input" id="updated-vehicle_make" name="updated-vehicle_make"
+              value="{{post.vehicle_make}}" />
+          </div>
+          <div class="form-grouped col-sm-6 col-md-4">
+            <label for="updated-vehicle_model">Vehicle Model:</label>
+            <input class="form-input" id="updated-vehicle_model" name="updated-vehicle_model"
+              value="{{post.vehicle_model}}" />
+          </div>
+          <div class="form-grouped col-sm-6 col-md-4">
+            <button id="update-btn" type="submit" class="btn btn-primary" data-id="{{post.id}}">Update</button>
+          </div>
+      </form>
+    </div>
   </div>
 </div>
 
