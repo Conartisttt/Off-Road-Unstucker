@@ -7,9 +7,8 @@ Let us steer you in the right direction! is your go-to off-roading assistance ap
 - [Description](#description)
 - [Screenshots](#screenshots)
 - [Technologies Used](#technologies-used)
-- [Installation](#installation)
+- [Deployment](#deployment)
 - [Features](#features)
-- [Usage Information](#usage-information)
 - [Contribution Guidelines](#contribution-guidelines)
 - [License](#license)
 - [Questions](#questions)
@@ -29,53 +28,54 @@ Our platform prioritizes safety, efficiency, and camaraderie, making off-road ex
 
 ### Screenshots
 **Screenshots of application:**
-![example-1](./example-goes-here)
-![example-2](./example-goes-here)
-
-
+![homepage-without-posts](./public/images/homepage.png)
+![homepage-with-posts](./public/images/posted-homepage.png)
+![login-page](./public/images/login-page.png)
+![post-page](./public/images/post.png)
+![make-a-post](./public/images/make-new-post.png)
+![profile-page](./public/images/profile-page.png)
 
 ## Technologies Used
 This collaborative full-stack application is powered by Node.js and Express.js, creating a robust RESTful API. Handlebars.js serves as the template engine for seamless rendering of dynamic content. MySQL, along with the Sequelize ORM, is utilized for efficient database management, supporting both GET and POST routes for retrieving and adding new data.
-In addition to the core technologies, we wanted users to incorporate their emails to enhance the functionality of our application. This innovative addition will help each user have their own account based on their email.
+
+For development, nodemon is employed to automatically restart the server upon code changes, facilitating a streamlined workflow.
+
+Nodemailer, a Node.js module, is used to send emails and enhance the functionality of the application. This innovative addition allows users to incorporate their emails, providing a personalized account experience.
+
+To test and interact with the API, the REST client extension for Visual Studio Code is utilized, offering a convenient alternative to external tools like Insomnia.
+
 The project follows the Model-View-Controller (MVC) paradigm, ensuring a well-organized folder structure. Authentication is implemented through express-session and cookies, prioritizing user security. API keys and sensitive information are safeguarded using environment variables for enhanced privacy.
+
 Deployment is achieved seamlessly using Heroku, with the application hosted live along with its data. The user interface is polished, responsive, and interactive, providing an engaging experience for users.
+
 The project adheres to high-quality coding standards, encompassing file structure, naming conventions, and best practices for class/id naming, indentation, and quality comments.
 
 
 
-## Installation
-1. Clone the repo: `git clone https://github.com/Conartisttt/Off-Road-Unstucker`
-2. Open in VS Code. If you do not have VS Code, [install it](https://code.visualstudio.com/).
-3. Using the terminal, ensure that Node.js v16 is installed. If not, download and install it from the [official Node.js website](https://nodejs.org/).
-4. Once Node.js v16 is installed, in the terminal, run the command `npm init -y` to initialize and create a `package.json` where project files will be stored.
-5. Next, use the terminal to run the command `npm install` to install the dependencies associated with this application. Developers may need to install additional libraries directly from the command line. To do so, use the commands:
-   - `npm install [name of the new library, package, or technology]` to install any additional libraries introduced as new additions to the project. In this project these would be:
-     - `npm install bcrypt@^5.0.0`
-     - `npm install connect-session-sequelize@^7.0.4`
-     - `npm install dotenv@^8.2.0`
-     - `npm install express@^4.17.1`
-     - `npm install express-handlebars@^5.2.0`
-     - `npm install express-session@^1.17.1`
-     - `npm install mysql2@^2.2.5`
-     - `npm install sequelize@^6.3.5`
-6. To run the application, within the terminal, type the command `node server.js`.
+
+## Deployment
+Here we have out live site! You can visit it [here!](https://offthebeatenpath-ec05917799ad.herokuapp.com/)
+
 
 
 ## Features
 **Off-Road Assistance Requests:** Users can submit assistance requests detailing their off-road predicaments, specifying the type of help and tools needed.
+
 **Collaborative Support:** Experienced off-road enthusiasts can browse and take on assistance requests that align with their skills, fostering a supportive community.
+
 **Dynamic Form:** The application provides a user-friendly form for submitting requests, allowing users to describe their stuck situation and required assistance.
+
 **Advanced Technologies:** Leveraging Node.js, Express.js, and Handlebars.js, the application seamlessly combines a robust back end with an intuitive front end.
+
 **Database Management:** MySQL and Sequelize ORM are employed to handle the database, ensuring efficient storage and retrieval of user requests.
+
 **Authentication Security:** User authentication is implemented using express-session and cookies, prioritizing the protection of user information.
-**Innovative Addition:** The project incorporates [name of the new library, package, or technology], enhancing functionality and introducing a unique element to the off-road assistance experience.
+
+**Innovative Addition:** The project incorporates Nodemailer, a popular Node.js module, enhancing functionality and introducing a unique element to the off-road assistance experience.
+
 **Responsive and Polished UI:** The user interface is designed to be responsive, providing an optimal viewing experience across various devices.
+
 **Heroku Deployment:** The application is seamlessly deployed using Heroku, ensuring accessibility along with its data.
-
-
-
-## Usage Information
-To run this application, use the command line to navigate to the directory of the application, in the command line you can install all dependencies (`npm i`), then type the command `node server.js`. The server will be running, in your browser you can type in 'http://localhost:3001' to reach the site and are free to interact.
 
 
 

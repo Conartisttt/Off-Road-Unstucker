@@ -202,6 +202,17 @@ button:not(:disabled) {
   background-color: var(--yellow);
 }
 
+
+
+.update-header {
+  background-color: var(--darkbrown);
+  color: var(--yellow);
+  border-radius: 10px;
+  padding: 15px;
+  margin: 20px;
+  text-align: center;
+}
+
 #delete {
   background-color: var(--yellow);
 }
