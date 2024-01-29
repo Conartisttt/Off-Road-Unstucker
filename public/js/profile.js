@@ -99,19 +99,11 @@ if (createPostBtn) {
   createPostBtn.addEventListener('click', newFormHandler);
 }
 
-// document
-//   .getElementById('create-post')
-//   .addEventListener('click', newFormHandler);
-
 const deletePostBtn = document.getElementById('delete');
 
 if(deletePostBtn) {
   deletePostBtn.addEventListener('click', delButtonHandler);
 }
-
-// document
-//   .getElementById('delete')
-//   .addEventListener();
 
 const updatePostBtn = document.getElementById('update');
 
@@ -119,14 +111,8 @@ if(updatePostBtn) {
   updatePostBtn.addEventListener('click', updateButtonHandler);
 }
 
-// document.getElementById('update')
-//   .addEventListener('click', updateButtonHandler);
-
 const updateDatabaseBtn = document.getElementById('update-btn');
 
 if(updateDatabaseBtn) {
   updateDatabaseBtn.addEventListener('click', updateDatabaseHandler);
 }
-
-// document.getElementById('update-btn')
-//   .addEventListener('click', updateDatabaseHandler);
