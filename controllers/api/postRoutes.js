@@ -60,7 +60,7 @@ router.put('/:id', async (req, res) => {
   }
 });
 
-
+//Update post helper_id with the user who clicked the button (saved in req.session.user_id)
 router.patch('/:id/accept', async (req, res) => {
   try {
     await Post.update({
@@ -71,13 +71,21 @@ router.patch('/:id/accept', async (req, res) => {
         id: req.params.id,
       },
     });
-
-    // Create a user or retrieve an existing user based on the provided email
-    const userData = await User.findOne({
-      where: { id: req.session.user_id },
+    //find a post where the helper_id is the user we just assigned above
+    const postData = await Post.findOne({
+      where: { helper_id: req.session.user_id },
+      include: [
+        {
+          model: User,
+        },
+      ]
     });
-
-    const transporter = nodemailer.createTransport ({
+    //find the user whose ID matches the user_id saved in the post we found above
+    const userData = await User.findOne({
+      where: { id: postData.dataValues.user_id}
+    });
+    //send email to user who is stuck
+    const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
         user: 'giselamata27@gmail.com',
@@ -97,7 +105,7 @@ router.patch('/:id/accept', async (req, res) => {
         res.status(500).json({ message: 'Failed to send email' });
       } else {
         console.log('Email sent: ' + info.response);
-        res.status(200).json({message: 'Mission accepted successfully!'});
+        res.status(200).json({ message: 'Mission accepted successfully!' });
       }
     });
   } catch (err) {

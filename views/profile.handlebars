@@ -15,8 +15,9 @@
     <div class="profile-post row align-items-start">
       <div class=" posted col-sm-6 col-md-5">
         <h4>
-          <div class="post-id"><button type="posted-btn"
-              onclick="location.href='/post/{{post.id}}'">{{post.name}}</button></div>
+          <div class="post-id">
+            <button type="posted-btn">{{post.name}}</button>
+          </div>
         </h4>
       </div>
       <div class="col"></div>
@@ -32,12 +33,12 @@
 
 <div id="update-post" class="hide">
   <div class="row mt-4 row align-items-start">
-      <div class="col-6 col-sm-3 update-header">
-        <h3>
-          Update Current Post:
-        </h3>
-      </div>
-      <div class="row">
+    <div class="col-6 col-sm-3 update-header">
+      <h3>
+        Update Current Post:
+      </h3>
+    </div>
+    <div class="row">
       <form class="form new-project-form">
         <div class="text-center">
           <div class="form-grouped col-sm-6 col-md-9">
@@ -47,7 +48,8 @@
           </div>
           <div class="form-grouped col-sm-6 col-md-9">
             <label for="updated-project-desc">description:</label>
-            <input class="form-control" id="updated-post-desc" name="updated-project-desc" value="{{post.description}}" />
+            <input class="form-control" id="updated-post-desc" name="updated-project-desc"
+              value="{{post.description}}" />
           </div>
           <div class="form-grouped col-sm-6 col-md-9">
             <label for="updated-contact_method">Contact Method:</label>
@@ -76,7 +78,7 @@
   </div>
 </div>
 
-<div id="create-new" class="hide row align-items-start">
+{{!-- <div id="create-new" class="hide row align-items-start">
   <div class="container created-post text-center">
     <h3>Stuck? Create a New Post:</h3>
     <form class="form new-project-form">
@@ -111,7 +113,7 @@
       </div>
     </form>
   </div>
-</div>
+</div> --}}
 
 {{else}}
 
@@ -152,7 +154,7 @@
   </div>
 </div>
 
-<div class="col-md-6 project-list hide">
+{{!-- <div class="col-md-6 project-list hide">
   <div class="current-post d-flex justify-content-center">
     <h3>Current Post:</h3>
   </div>
@@ -173,8 +175,8 @@
       </div>
     </div>
   </div>
-</div>
-
+</div> --}}
+{{!--
 <div id="update-post" class="hide">
   <div class="row mt-4 row align-items-start">
     <div class="row">
@@ -219,7 +221,7 @@
       </form>
     </div>
   </div>
-</div>
+</div> --}}
 
 {{/if}}
 </div>

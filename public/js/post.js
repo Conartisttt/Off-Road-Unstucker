@@ -9,6 +9,9 @@ async function acceptMissionHandler() {
   }
 }
 
-document
-  .getElementById('acceptMissionBtn')
-  .addEventListener('click', acceptMissionHandler);
+const acceptMission = document.getElementById('acceptMissionBtn');
+
+if (acceptMission) {
+  acceptMission.addEventListener('click', acceptMissionHandler);
+}
+

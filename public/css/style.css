@@ -198,6 +198,10 @@ button:not(:disabled) {
   margin: 15px;
 }
 
+li {
+  list-style-type: none;
+}
+
 #update {
   background-color: var(--yellow);
 }
