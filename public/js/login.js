@@ -17,7 +17,22 @@ const loginFormHandler = async (event) => {
       // If successful, redirect the browser to the profile page
       document.location.replace('/profile');
     } else {
-      alert(response.statusText);
+      // alert(response.statusText);
+      <section class="modal hidden">
+      <div class="flex">
+        <img src="user.png" width="50px" height="50px" alt="user" />
+        <button class="btn-close">⨉</button>
+      </div>
+      <div>
+        <h3>Stay in touch</h3>
+        <p>
+          'Register an account:'
+        </p>
+      </div>
+    <text>'No user found with that information. Please try again!'</text>
+      <button class="btn">close</button>
+    </section>
+      
     }
   }
 };
@@ -43,10 +58,37 @@ const signupFormHandler = async (event) => {
       // If successful, redirect the browser to the profile page
       document.location.replace('/profile');
     } else {
-      alert(response.statusText);
+      <section class="modal hidden">
+      <div class="flex">
+        <img src="user.png" width="50px" height="50px" alt="user" />
+        <button class="btn-close">⨉</button>
+      </div>
+      <div>
+        <h3>Stay in touch</h3>
+        <p>
+          'Register an account:'
+        </p>
+      </div>
+    <text>(response.statusText)</text>
+      <button class="btn">close</button>
+    </section>
+      
     }
   } else {
-    alert('Something is missing... Please try again');
+    <section class="modal hidden">
+      <div class="flex">
+        <img src="user.png" width="50px" height="50px" alt="user" />
+        <button class="btn-close">⨉</button>
+      </div>
+      <div>
+        <h3>Stay in touch</h3>
+        <p>
+          'Register an account:'
+        </p>
+      </div>
+    <text>'Something is missing... Please try again'</text>
+      <button class="btn">close</button>
+    </section>
   }
 };
 

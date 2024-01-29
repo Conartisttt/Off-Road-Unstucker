@@ -1,15 +1,22 @@
 const router = require('express').Router();
 const { Post, User } = require('../models');
 const withAuth = require('../utils/auth');
+const { Op } = require('sequelize');
 
 // Route for homepage
 router.get('/', async (req, res) => {
   try {
     // Get all posts and JOIN with user data
     const postData = await Post.findAll({
+      where: {
+        user_id: {
+          [Op.not]: req.session.user_id || ''
+        }
+      },
       include: [
         {
           model: User,
+          as: 'userPost',
           attributes: ['name'],
         },
       ],
@@ -24,7 +31,8 @@ router.get('/', async (req, res) => {
       logged_in: req.session.logged_in
     });
   } catch (err) {
-    res.status(500).json(err);
+    res.render('error');
+    res.status(500);
   }
 });
 
@@ -36,6 +44,7 @@ router.get('/post/:id', async (req, res) => {
       include: [
         {
           model: User,
+          as: 'userPost',
           attributes: ['name', 'email', 'phone'],
         },
       ],
@@ -50,7 +59,8 @@ router.get('/post/:id', async (req, res) => {
       logged_in: req.session.logged_in
     });
   } catch (err) {
-    res.status(500).json(err);
+    res.render('error');
+    res.status(500);
   }
 });
 
@@ -72,7 +82,8 @@ router.get('/profile', withAuth, async (req, res) => {
       logged_in: true
     });
   } catch (err) {
-    res.status(500).json(err);
+    res.render('error');
+    res.status(500);
   }
 });
 
@@ -84,6 +95,10 @@ router.get('/login', (req, res) => {
   }
 
   res.render('login');
+});
+
+router.get('*', (req, res) => {
+  res.render('homepage');
 });
 
 module.exports = router;

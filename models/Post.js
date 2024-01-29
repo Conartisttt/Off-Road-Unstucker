@@ -32,6 +32,13 @@ Post.init(
         key: 'id',
       },
     },
+    helper_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'user',
+        key: 'id',
+      },
+    },
     vehicle_make: {
       type: DataTypes.STRING,
       allowNull: false,

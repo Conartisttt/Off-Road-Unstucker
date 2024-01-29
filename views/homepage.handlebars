@@ -5,24 +5,9 @@
     <h2>
       <div class="post-btn "><button class="hover-effect" type="post-button" onclick="location.href='/post/{{post.id}}'">{{post.name}}</button></div>
     </h2>
-    <p>Created by {{post.user.name}} on {{format_date post.date_created}}</p>
-  </div>
-  <section class="modal hidden">
-  <div class="flex">
-    <img src="user.png" width="50px" height="50px" alt="user" />
-    <button class="btn-close">⨉</button>
-  </div>
-  <div>
-    <h3>Stay in touch</h3>
-    <p>
-      'Register an account:'
-    </p>
+    <p>Created by {{post.userPost.name}} on {{format_date post.date_created}}</p>
   </div>
 
-  <input type="email" id="email" placeholder="example@mail.com" />
-  <input type="password" id="password" placeholder="enter secure password" />
-  <button class="btn">Submit</button>
-</section>
 
 <div class="overlay hidden"></div>
 <button class="btn btn-open">Open Modal</button>

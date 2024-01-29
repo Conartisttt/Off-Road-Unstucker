@@ -11,8 +11,8 @@
   <div>
     <p>Contact Details:</p>
     <ul>
-      <li>Email: {{user.email}}</li>
-      <li>Phone: {{user.phone}}</li>
+      <li>Email: {{userPost.email}}</li>
+      <li>Phone: {{userPost.phone}}</li>
     </ul>
   </div>
   <div>
@@ -22,11 +22,10 @@
       <li>Model: {{vehicle_model}}</li>
     </ul>
   </div>
-  <p>Created by {{user.name}} on {{format_date date_created}}</p>
+  <p>Created by {{userPost.name}} on {{format_date date_created}}</p>
   {{#if logged_in}}
-  <p>
-    <button class="btn btn-primary">Accept this Mission</button>
-  </p>
+  <button id="acceptMissionBtn" class="btn btn-primary" >Accept this Mission</button>
+      <input id="post_id" type="hidden" value="{{id}}">
   {{else}}
       <button class="btn btn-primary hover-effect" onclick="location.href='/login'">Accept this Mission</button>
 
@@ -81,5 +80,11 @@ window.initMap = initMap;
     
 </script>
 </div>
+<<<<<<< HEAD
 
 </div>
+=======
+</div>
+</div>
+<script src="../js/post.js" defer></script>
+>>>>>>> f867845c0d437ed7801297545fdffad3320ca188

@@ -9,7 +9,21 @@ const logout = async () => {
     // If successful, redirect the browser to the profile page
     document.location.replace('/');
   } else {
-    alert(response.statusText);
+    <section class="modal hidden">
+      <div class="flex">
+        <img src="user.png" width="50px" height="50px" alt="user" />
+        <button class="btn-close">⨉</button>
+      </div>
+      <div>
+        <h3>Stay in touch</h3>
+        <p>
+          'Register an account:'
+        </p>
+      </div>
+    <text>(response.statusText)</text>
+      <button class="btn">close</button>
+    </section>
+    }
   }
 };
 

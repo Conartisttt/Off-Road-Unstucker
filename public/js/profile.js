@@ -23,10 +23,36 @@ const newFormHandler = async (event) => {
       // If successful, redirect the browser to the profile page
       document.location.replace('/profile');
     } else {
-      alert('Failed to create post');
+      <section class="modal hidden">
+      <div class="flex">
+        <img src="user.png" width="50px" height="50px" alt="user" />
+        <button class="btn-close">⨉</button>
+      </div>
+      <div>
+        <h3>Stay in touch</h3>
+        <p>
+          'Register an account:'
+        </p>
+      </div>
+    <text>'failed to create post'</text>
+      <button class="btn">close</button>
+    </section>
     }
   } else {
-    alert('Something is missing... failed to create post');
+    <section class="modal hidden">
+      <div class="flex">
+        <img src="user.png" width="50px" height="50px" alt="user" />
+        <button class="btn-close">⨉</button>
+      </div>
+      <div>
+        <h3>Stay in touch</h3>
+        <p>
+          'Register an account:'
+        </p>
+      </div>
+    <text>'Something is missing... failed to create post'</text>
+      <button class="btn">close</button>
+    </section>
   }
 };
 
@@ -44,7 +70,20 @@ const delButtonHandler = async (event) => {
       // If successful, redirect the browser to the profile page
       document.location.replace('/profile');
     } else {
-      alert('Failed to delete post');
+      <section class="modal hidden">
+      <div class="flex">
+        <img src="user.png" width="50px" height="50px" alt="user" />
+        <button class="btn-close">⨉</button>
+      </div>
+      <div>
+        <h3>Stay in touch</h3>
+        <p>
+          'Register an account:'
+        </p>
+      </div>
+    <text>'Failed to delete post'</text>
+      <button class="btn">close</button>
+    </section>
     }
   }
 };
@@ -54,9 +93,11 @@ const updateButtonHandler = async () => {
   const currrentPost = document.getElementById('post');
   currrentPost.classList.add('hide');
   const updatePost = document.getElementById('update-post');
-  updatePost.classList.remove('hide');
-  const createPost = document.getElementById('create-new');
-  createPost.classList.add('hide');
+  if(updatePost){
+    updatePost.classList.remove('hide');
+  }
+  // const createPost = document.getElementById('create-new');
+  // createPost.classList.add('hide');
 };
 
 const updateDatabaseHandler = async (event) => {
@@ -83,24 +124,60 @@ const updateDatabaseHandler = async (event) => {
         // If successful, redirect the browser to the profile page
         document.location.replace('/profile');
       } else {
-        alert('Failed to update post');
+        <section class="modal hidden">
+      <div class="flex">
+        <img src="user.png" width="50px" height="50px" alt="user" />
+        <button class="btn-close">⨉</button>
+      </div>
+      <div>
+        <h3>Stay in touch</h3>
+        <p>
+          'Register an account:'
+        </p>
+      </div>
+    <text>'failed to update post'</text>
+      <button class="btn">close</button>
+    </section>
       }
     } else {
-      alert('Post Not Updated! Something is missing..');
+      <section class="modal hidden">
+      <div class="flex">
+        <img src="user.png" width="50px" height="50px" alt="user" />
+        <button class="btn-close">⨉</button>
+      </div>
+      <div>
+        <h3>Stay in touch</h3>
+        <p>
+          'Register an account:'
+        </p>
+      </div>
+    <text>'Post Not Updated! Something is missing..'</text>
+      <button class="btn">close</button>
+    </section>
     }
   }
 };
 
-document
-  .querySelector('.new-project-form')
-  .addEventListener('submit', newFormHandler);
+const createPostBtn = document.getElementById('create-post');
 
-document
-  .getElementById('delete')
-  .addEventListener('click', delButtonHandler);
+if (createPostBtn) {
+  createPostBtn.addEventListener('click', newFormHandler);
+}
 
-document.getElementById('update')
-  .addEventListener('click', updateButtonHandler);
+const deletePostBtn = document.getElementById('delete');
 
-document.getElementById('update-btn')
-  .addEventListener('click', updateDatabaseHandler);
+if(deletePostBtn) {
+  deletePostBtn.addEventListener('click', delButtonHandler);
+}
+
+const updatePostBtn = document.getElementById('update');
+
+if(updatePostBtn) {
+  updatePostBtn.addEventListener('click', updateButtonHandler);
+}
+
+const updateDatabaseBtn = document.getElementById('update-btn');
+
+if(updateDatabaseBtn) {
+  updateDatabaseBtn.addEventListener('click', updateDatabaseHandler);
+}
