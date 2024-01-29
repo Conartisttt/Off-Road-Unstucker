@@ -71,6 +71,7 @@ router.patch('/:id/accept', async (req, res) => {
         id: req.params.id,
       },
     });
+
     //find a post where the helper_id is the user we just assigned above
     const postData = await Post.findOne({
       where: { helper_id: req.session.user_id },
@@ -80,10 +81,16 @@ router.patch('/:id/accept', async (req, res) => {
         },
       ]
     });
+
     //find the user whose ID matches the user_id saved in the post we found above
-    const userData = await User.findOne({
-      where: { id: postData.dataValues.user_id}
+    const stuckUserData = await User.findOne({
+      where: {id: postData.dataValues.user_id}
     });
+
+    const helpingUserData = await User.findOne({
+      where: {id: req.session.user_id}
+    });
+
     //send email to user who is stuck
     const transporter = nodemailer.createTransport({
       service: 'gmail',
@@ -94,9 +101,9 @@ router.patch('/:id/accept', async (req, res) => {
     });
     const mailOptions = {
       from: 'giselamata27@gmail.com',
-      to: userData.dataValues.email,
-      subject: 'Welcome to Off Road Unstucker!',
-      text: `Hi ${userData.dataValues.name}, \n\nWelcome to Off Road Assistance! Help is on the way!`,
+      to: stuckUserData.dataValues.email,
+      subject: 'Help is on the way!',
+      text: `Hi ${stuckUserData.dataValues.name}, \n\nHelp is on the way!\n ${helpingUserData.dataValues.name} has accepted your job and is coming to get you. \n Feel free to connect with them at: \n Phone: ${helpingUserData.dataValues.phone} \n Email: ${helpingUserData.dataValues.email} \n\n Thanks so much for using our service! \n\n -The Team here at Off The Beaten Path.`,
     };
 
     transporter.sendMail(mailOptions, (error, info) => {
