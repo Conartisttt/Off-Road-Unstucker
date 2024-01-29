@@ -62,6 +62,7 @@ const updateButtonHandler = async () => {
 };
 
 const updateDatabaseHandler = async (event) => {
+  event.preventDefault();
   if (event.target.hasAttribute('data-id')) {
     // Collect data from update form
     const id = event.target.getAttribute('data-id');

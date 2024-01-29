@@ -54,7 +54,7 @@ router.put('/:id', async (req, res) => {
         },
       }
     );
-    res.status(200);
+    res.status(200).end();
   } catch {
     res.status(500).end();
   }
