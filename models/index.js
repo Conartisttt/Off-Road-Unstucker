@@ -7,6 +7,7 @@ User.hasOne(Post, {
 });
 
 Post.belongsTo(User, {
+  as: 'userPost',
   foreignKey: 'user_id'
 });
 

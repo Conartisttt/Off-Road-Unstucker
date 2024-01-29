@@ -54,7 +54,9 @@ const updateButtonHandler = async () => {
   const currrentPost = document.getElementById('post');
   currrentPost.classList.add('hide');
   const updatePost = document.getElementById('update-post');
-  updatePost.classList.remove('hide');
+  if(updatePost){
+    updatePost.classList.remove('hide');
+  }
   // const createPost = document.getElementById('create-new');
   // createPost.classList.add('hide');
 };
@@ -91,16 +93,26 @@ const updateDatabaseHandler = async (event) => {
   }
 };
 
-document
-  .getElementById('create-post')
-  .addEventListener('click', newFormHandler);
+const createPostBtn = document.getElementById('create-post');
 
-document
-  .getElementById('delete')
-  .addEventListener('click', delButtonHandler);
+if (createPostBtn) {
+  createPostBtn.addEventListener('click', newFormHandler);
+}
 
-document.getElementById('update')
-  .addEventListener('click', updateButtonHandler);
+const deletePostBtn = document.getElementById('delete');
 
-document.getElementById('update-btn')
-  .addEventListener('click', updateDatabaseHandler);
+if(deletePostBtn) {
+  deletePostBtn.addEventListener('click', delButtonHandler);
+}
+
+const updatePostBtn = document.getElementById('update');
+
+if(updatePostBtn) {
+  updatePostBtn.addEventListener('click', updateButtonHandler);
+}
+
+const updateDatabaseBtn = document.getElementById('update-btn');
+
+if(updateDatabaseBtn) {
+  updateDatabaseBtn.addEventListener('click', updateDatabaseHandler);
+}
