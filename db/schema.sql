@@ -3,3 +3,5 @@ DROP DATABASE IF EXISTS unstuck_db;
 
 -- Create new database
 CREATE DATABASE unstuck_db;
+
+USE unstuck_db;
