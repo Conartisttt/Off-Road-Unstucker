@@ -1,18 +1,16 @@
 <div class="row align-items-start">
-  <div class="col"></div>
   <div class="col welcome-sign d-flex justify-content-center">
     <h2>Welcome, {{name}}!</h2>
   </div>
-  <div class="col"></div>
 </div>
 
 {{#if post}}
-<div class="col-md-6 project-list">
+<div class="project-list">
   <div class="current-post d-flex justify-content-center">
     <h3>Current Post:</h3>
   </div>
   <div id="post">
-    <div class="profile-post row align-items-start">
+    <div class="profile-post row align-items-start d-flex">
       <div class=" posted col-sm-6 col-md-5">
         <h4>
           <div class="post-id">
@@ -20,12 +18,11 @@
           </div>
         </h4>
       </div>
-      <div class="col"></div>
-      <div class="col delete-btn">
-        <button id="delete" class="btn btn-danger" data-id="{{post.id}}">DELETE</button>
+      <div class="col d-flex justify-content-around delete-btn">
+        <button id="delete" class="hover-effect btn btn-danger" data-id="{{post.id}}">DELETE</button>
       </div>
-      <div class="col update-btn">
-        <button id='update' class="btn btn-danger">UPDATE</button>
+      <div class="col d-flex justify-content-around update-btn">
+        <button id='update' class=" hover-effect btn btn-danger">UPDATE</button>
       </div>
     </div>
   </div>
@@ -39,40 +36,39 @@
       </h3>
     </div>
     <div class="row">
-      <form class="form new-project-form">
-        <div class="text-center">
-          <div class="form-grouped col-sm-6 col-md-9">
-            <label for="updated-project-name">post title:</label>
-            <input class="form-control" type="text" id="updated-post-name" name="updated-project-name"
-              value="{{post.name}}" />
-          </div>
-          <div class="form-grouped col-sm-6 col-md-9">
-            <label for="updated-project-desc">description:</label>
-            <input class="form-control" id="updated-post-desc" name="updated-project-desc"
-              value="{{post.description}}" />
-          </div>
-          <div class="form-grouped col-sm-6 col-md-9">
-            <label for="updated-contact_method">Contact Method:</label>
-            <select class="form-control" name="updated-contact_method" id="updated-contact_method">
-              <option value="" disabled selected>Select your option</option>
-              <option value="call">Call</option>
-              <option value="text">Text</option>
-              <option value="email">Email</option>
-            </select>
-          </div>
-          <div class="form-grouped col-sm-6 col-md-9">
-            <label for="updated-vehicle_make">Vehicle Make:</label>
-            <input class="form-control" id="updated-vehicle_make" name="updated-vehicle_make"
-              value="{{post.vehicle_make}}" />
-          </div>
-          <div class="form-grouped col-sm-6 col-md-9">
-            <label for="updated-vehicle_model">Vehicle Model:</label>
-            <input class="form-control" id="updated-vehicle_model" name="updated-vehicle_model"
-              value="{{post.vehicle_model}}" />
-          </div>
-          <div class="form-grouped col-sm-6 col-md-9">
-            <button id="update-btn" type="submit" class="btn btn-primary" data-id="{{post.id}}">Update</button>
-          </div>
+      <form class="form-width">
+
+        <div class="form-grouped form-group col-sm-6 col-md-9 col-lg-12">
+          <label for="updated-post-name">post title:</label>
+          <input class="form-control" type="text" id="updated-post-name" name="updated-post-name"
+            value="{{post.name}}" />
+        </div>
+        <div class="form-grouped form-group col-sm-6 col-md-9 col-lg-12">
+          <label for="updated-post-desc">description:</label>
+          <input class="form-control" id="updated-post-desc" name="updated-post-desc" value="{{post.description}}" />
+        </div>
+        <div class="form-grouped form-group col-sm-6 col-md-9 col-lg-12">
+          <label for="updated-contact_method">Contact Method:</label>
+          <select class="form-control" name="updated-contact_method" id="updated-contact_method">
+            <option value="" disabled selected>Select your option</option>
+            <option value="call">Call</option>
+            <option value="text">Text</option>
+            <option value="email">Email</option>
+          </select>
+        </div>
+        <div class="form-grouped form-group col-sm-6 col-md-9 col-lg-12">
+          <label for="updated-vehicle_make">Vehicle Make:</label>
+          <input class="form-control" id="updated-vehicle_make" name="updated-vehicle_make"
+            value="{{post.vehicle_make}}" />
+        </div>
+        <div class="form-grouped form-group col-sm-6 col-md-9 col-lg-12">
+          <label for="updated-vehicle_model">Vehicle Model:</label>
+          <input class="form-control" id="updated-vehicle_model" name="updated-vehicle_model"
+            value="{{post.vehicle_model}}" />
+        </div>
+        <div class="form-grouped form-group col-sm-6 col-md-9 col-lg-12">
+          <button id="update-btn" type="submit" class="btn btn-primary" data-id="{{post.id}}">Update</button>
+          <button class="btn btn-primary" id="cancel-btn">Cancel</button>
       </form>
     </div>
   </div>
@@ -86,12 +82,12 @@
     <form class="form new-project-form">
       <div class="row">
         <div class="form-group col-sm-6 col-md-4">
-          <label for="project-name">Post Title:</label>
-          <input class="form-input" type="text" id="post-name" name="project-name" />
+          <label for="post-name">Post Title:</label>
+          <textarea class="form-input" type="text" id="post-name" name="post-name" /></textarea>
         </div>
         <div class="form-group col-sm-6 col-md-4">
           <label for="project-desc">Description:</label>
-          <input class="form-input" id="post-desc" name="project-desc" />
+          <textarea class="form-input" id="post-desc" name="project-desc" /></textarea>
         </div>
         <div class="form-group col-sm-6 col-md-3">
           <label for="contact_method">Contact Method:</label>

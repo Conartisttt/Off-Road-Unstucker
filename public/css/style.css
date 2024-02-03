@@ -1,4 +1,10 @@
 CSS FILE
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
 header, .project:not(:last-child) {
   border-bottom: 1px solid #CD7131;
 }
@@ -76,7 +82,7 @@ button.btn.btn-primary {
   margin: 5px;
   background-color: var(--darkbrown);
   color: var(--yellow);
-  border: var(--black);
+  border: 1px solid var(--yellow);
 }
 
 button.btn.btn-primary:hover {
@@ -291,4 +297,13 @@ li {
   .login, .signup {
     width: 100%; /* Make each box take up the full width on smaller screens */
   }
+}
+
+#map {
+  height: 500px;
+  width: 500px;
+}
+
+.form-width {
+  width: 500px;
 }

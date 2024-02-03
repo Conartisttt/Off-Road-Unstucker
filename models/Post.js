@@ -50,7 +50,13 @@ Post.init(
     contact_method: {
       type: DataTypes.STRING,
       allowNull: false,
-    }
+    },
+    latitude: {
+      type: DataTypes.STRING,
+    },
+    longitude: {
+      type: DataTypes.STRING,
+    },
   },
   {
     // Link to database connection
