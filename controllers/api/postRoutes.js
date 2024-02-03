@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { Post, User } = require('../../models');
 const withAuth = require('../../utils/auth');
+require('dotenv').config();
 const nodemailer = require('nodemailer');
 
 // Create a new post
@@ -13,6 +14,23 @@ router.post('/', withAuth, async (req, res) => {
 
     res.status(200).json(newPost);
   } catch (err) {
+    res.status(500).end();
+  }
+});
+
+// Gets post information based on its ID
+router.get('/:id/location', async (req, res) => {
+  try {
+    const postData = await Post.findByPk(req.params.id).catch((err) => {
+      res.json(err);
+    });
+    if (postData) {
+      res.status(200).json(postData);
+    } else {
+      res.status(500).json({ message: 'No post found with this id!' });
+      return;
+    }
+  } catch (error) {
     res.status(500).end();
   }
 });
@@ -84,11 +102,11 @@ router.patch('/:id/accept', async (req, res) => {
 
     //find the user whose ID matches the user_id saved in the post we found above
     const stuckUserData = await User.findOne({
-      where: {id: postData.dataValues.user_id}
+      where: { id: postData.dataValues.user_id }
     });
 
     const helpingUserData = await User.findOne({
-      where: {id: req.session.user_id}
+      where: { id: req.session.user_id }
     });
 
     //send email to user who is stuck
@@ -96,7 +114,7 @@ router.patch('/:id/accept', async (req, res) => {
       service: 'gmail',
       auth: {
         user: 'giselamata27@gmail.com',
-        pass: 'assa lhem ektl yjzg'
+        pass: process.env.NODEMAILER
       }
     });
     const mailOptions = {
