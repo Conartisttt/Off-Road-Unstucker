@@ -54,7 +54,7 @@ The project adheres to high-quality coding standards, encompassing file structur
 
 
 ## Deployment
-Here we have out live site! You can visit it [here!](https://offthebeatenpath-ec05917799ad.herokuapp.com/)
+Here we have out live site! You can visit it [here!](https://offthebeatenpath-c1b11d5328ea.herokuapp.com/)
 
 
 
