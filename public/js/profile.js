@@ -46,7 +46,20 @@ const newFormHandler = async (event) => {
   }
 };
 
-
+const showAlertModal = (message) => {
+  const myModalElement = document.getElementById('myModal');
+  const modalPlaceholder = document.querySelector('#myModal #modal-placeholder > p');
+  const myModal = new bootstrap.Modal(myModalElement, {
+    focus: true,
+  });
+  myModal.show();
+  if (myModal) {
+    modalPlaceholder.textContent = message;
+    // Initialize the modal only once and then show it
+  } else {
+    console.error('Element with ID "modal-placeholder" not found.');
+  }
+};
 
 
 const delButtonHandler = async (event) => {
@@ -113,10 +126,12 @@ const updateDatabaseHandler = async (event) => {
         // If successful, redirect the browser to the profile page
         document.location.replace('/profile');
       } else {
-        alert('Failed to update post');
+        showAlertModal('Failed to update post');
       }
     } else {
-      alert('Post Not Updated! Something is missing..');
+      showAlertModal(
+        'Oh No! Something went wrong! You are missing something in your post!'
+      );
     }
   }
 };
